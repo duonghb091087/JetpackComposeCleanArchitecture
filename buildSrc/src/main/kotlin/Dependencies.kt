@@ -66,7 +66,7 @@ object Dependencies {
         const val instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         object Mockk {
-            val mockkVersion = "1.13.0"
+            val mockkVersion = "1.12.7"
             val mockk = "io.mockk:mockk:$mockkVersion"
             val android = "io.mockk:mockk-android:$mockkVersion"
         }
