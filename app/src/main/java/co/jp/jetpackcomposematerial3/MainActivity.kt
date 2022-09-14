@@ -27,8 +27,6 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-
-    // Test
 }
 
 @Composable
