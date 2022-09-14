@@ -68,11 +68,12 @@ dependencies {
     implementation(Dependencies.Compose.uiToolingPreview)
     implementation(Dependencies.Lifecycle.runtimeKtx)
     testImplementation(Dependencies.Test.junit)
+    testImplementation(Dependencies.Test.Mockk.mockk)
     androidTestImplementation(Dependencies.Test.extJunit)
     androidTestImplementation(Dependencies.Test.espresso)
     debugImplementation(Dependencies.Compose.uiTooling)
-    debugImplementation(Dependencies.Compose.uiTestManifest)
-    androidTestImplementation(Dependencies.Compose.uiTestJunit4)
+    debugImplementation(Dependencies.Test.Compose.uiTestManifest)
+    androidTestImplementation(Dependencies.Test.Compose.uiTestJunit4)
 
     // Hilt
     implementation(Dependencies.Hilt.android)

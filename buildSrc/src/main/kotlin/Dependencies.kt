@@ -1,3 +1,5 @@
+import Dependencies.Compose.composeVersion
+
 object Dependencies {
 
     object Android {
@@ -19,8 +21,6 @@ object Dependencies {
         const val uiToolingPreview = "androidx.compose.ui:ui-tooling-preview:$composeVersion"
         const val activityCompose = "androidx.activity:activity-compose:1.5.1"
         const val uiTooling = "androidx.compose.ui:ui-tooling:$composeVersion"
-        const val uiTestJunit4 = "androidx.compose.ui:ui-test-junit4:$composeVersion"
-        const val uiTestManifest = "androidx.compose.ui:ui-test-manifest:$composeVersion"
     }
 
     object Kotlin {
@@ -64,5 +64,16 @@ object Dependencies {
         const val extJunit = "androidx.test.ext:junit:1.1.2"
         const val espresso = "androidx.test.espresso:espresso-core:3.4.0"
         const val instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        object Mockk {
+            val mockkVersion = "1.13.0"
+            val mockk = "io.mockk:mockk:$mockkVersion"
+            val android = "io.mockk:mockk-android:$mockkVersion"
+        }
+
+        object Compose {
+            const val uiTestJunit4 = "androidx.compose.ui:ui-test-junit4:$composeVersion"
+            const val uiTestManifest = "androidx.compose.ui:ui-test-manifest:$composeVersion"
+        }
     }
 }
