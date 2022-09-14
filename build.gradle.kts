@@ -13,6 +13,8 @@ buildscript {
         classpath(Dependencies.Android.classpath)
         classpath(Dependencies.Kotlin.classpath)
         classpath(Dependencies.Hilt.classpath)
+        classpath(Dependencies.Kotlin.classpath)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10")
     }
 }
 

@@ -4,6 +4,7 @@ object Dependencies {
 
     object Android {
         const val application = "com.android.application"
+        const val library = "com.android.library"
         const val classpath = "com.android.tools.build:gradle:7.2.2"
         const val codeKtx = "androidx.core:core-ktx:1.9.0"
         const val material = "com.google.android.material:material:1.5.0-alpha04"
@@ -24,13 +25,14 @@ object Dependencies {
     }
 
     object Kotlin {
-        const val kotlinVersion = "1.6.10"
+        const val kotlinVersion = "1.7.10"
         const val classpath = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         const val reflect = "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
         const val test = "org.jetbrains.kotlin:kotlin-test:$kotlinVersion"
         const val android = "kotlin-android"
         const val kapt = "kotlin-kapt"
         const val parcelize = "kotlin-parcelize"
+        const val jetbrains = "org.jetbrains.kotlin.android"
     }
 
     object Hilt {
