@@ -6,7 +6,7 @@ object Dependencies {
         const val application = "com.android.application"
         const val library = "com.android.library"
         const val classpath = "com.android.tools.build:gradle:7.2.2"
-        const val codeKtx = "androidx.core:core-ktx:1.9.0"
+        const val coreKtx = "androidx.core:core-ktx:1.9.0"
         const val material = "com.google.android.material:material:1.5.0-alpha04"
         const val startup = "androidx.startup:startup-runtime:1.0.0"
     }
@@ -20,8 +20,18 @@ object Dependencies {
         const val ui = "androidx.compose.ui:ui:$composeVersion"
         const val material3 = "androidx.compose.material3:material3:1.0.0-beta02"
         const val uiToolingPreview = "androidx.compose.ui:ui-tooling-preview:$composeVersion"
-        const val activityCompose = "androidx.activity:activity-compose:1.5.1"
         const val uiTooling = "androidx.compose.ui:ui-tooling:$composeVersion"
+        val foundation = "androidx.compose.foundation:foundation:$composeVersion"
+        val layout = "androidx.compose.foundation:foundation-layout:$composeVersion"
+        val material = "androidx.compose.material:material:$composeVersion"
+        val materialIconsExtended = "androidx.compose.material:material-icons-extended:$composeVersion"
+        val runtime = "androidx.compose.runtime:runtime:$composeVersion"
+        val runtimeLivedata = "androidx.compose.runtime:runtime-livedata:$composeVersion"
+        val uiUtil = "androidx.compose.ui:ui-util:$composeVersion"
+        val viewBinding = "androidx.compose.ui:ui-viewbinding:$composeVersion"
+
+        val activityComposeVersion = "1.5.1"
+        val activityCompose = "androidx.activity:activity-compose:$activityComposeVersion"
     }
 
     object Kotlin {
@@ -33,6 +43,7 @@ object Dependencies {
         const val kapt = "kotlin-kapt"
         const val parcelize = "kotlin-parcelize"
         const val jetbrains = "org.jetbrains.kotlin.android"
+        const val compilerExtensionVersion = "1.3.1"
     }
 
     object Hilt {
@@ -41,6 +52,11 @@ object Dependencies {
         const val classpath = "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
         const val android = "com.google.dagger:hilt-android:$hiltVersion"
         const val kapt = "com.google.dagger:hilt-android-compiler:$hiltVersion"
+    }
+
+    object Landscapist {
+        val landscapistVersion = "2.0.0"
+        val glide = "com.github.skydoves:landscapist-glide:$landscapistVersion"
     }
 
     object Jitpack {

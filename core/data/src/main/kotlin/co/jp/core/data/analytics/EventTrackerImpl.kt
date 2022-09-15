@@ -1,7 +1,6 @@
 package co.jp.core.data.analytics
 
 import android.os.Bundle
-import co.jp.tracking.TrackingEvent
 import timber.log.Timber
 
 /**
@@ -56,9 +55,7 @@ open class EventTrackerImpl(
         // TODO
         // firebaseTracker.logEvent(event, bundle)
 
-        if (false) { // Change this value in debugging analytics
-            val tail = params?.let { " : $it" }.orEmpty()
-            Timber.i("[Firebase Event] $event$tail")
-        }
+        val tail = params?.let { " : $it" }.orEmpty()
+        Timber.i("[Firebase Event] $event$tail")
     }
 }

@@ -1,7 +1,5 @@
 package co.jp.core.data.analytics
 
-import co.jp.tracking.TrackingEvent
-
 /**
  * ・GA
  * ・Firebase

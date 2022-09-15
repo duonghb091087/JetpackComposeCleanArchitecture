@@ -49,7 +49,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.1"
+        kotlinCompilerExtensionVersion = Dependencies.Kotlin.compilerExtensionVersion
     }
 
     // Allow references to generated code
@@ -59,20 +59,30 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.Android.codeKtx)
-    implementation(Dependencies.Android.material)
+    // depends modules
+    implementation(project(":core:ui"))
+    implementation(project(":core:data"))
+    implementation(project(":feature:main"))
+    implementation(project(":feature:main-api"))
+    implementation(project(":feature:authention"))
+    implementation(project(":feature:authention-api"))
+
+    // Libs
+    implementation(Dependencies.Android.coreKtx)
     implementation(Dependencies.Compose.ui)
-    implementation(Dependencies.Compose.activityCompose)
-    implementation(Dependencies.Compose.material3)
     implementation(Dependencies.Compose.uiToolingPreview)
+    implementation(Dependencies.Compose.foundation)
+    implementation(Dependencies.Compose.layout)
+    implementation(Dependencies.Compose.material3)
+    implementation(Dependencies.Compose.material)
+    implementation(Dependencies.Compose.materialIconsExtended)
+    implementation(Dependencies.Compose.runtime)
+    implementation(Dependencies.Compose.runtimeLivedata)
+    implementation(Dependencies.Compose.uiTooling)
+    implementation(Dependencies.Compose.uiUtil)
+    implementation(Dependencies.Compose.viewBinding)
+    implementation(Dependencies.Compose.activityCompose)
     implementation(Dependencies.Lifecycle.runtimeKtx)
-    testImplementation(Dependencies.Test.junit)
-    testImplementation(Dependencies.Test.Mockk.mockk)
-    androidTestImplementation(Dependencies.Test.extJunit)
-    androidTestImplementation(Dependencies.Test.espresso)
-    debugImplementation(Dependencies.Compose.uiTooling)
-    debugImplementation(Dependencies.Test.Compose.uiTestManifest)
-    androidTestImplementation(Dependencies.Test.Compose.uiTestJunit4)
 
     // Hilt
     implementation(Dependencies.Hilt.android)

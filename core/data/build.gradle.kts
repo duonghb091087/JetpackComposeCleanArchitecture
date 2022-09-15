@@ -24,11 +24,9 @@ android {
 }
 
 dependencies {
-    // our modules
-    implementation(project(":tracking"))
 
-    // core
-    implementation(Dependencies.Android.codeKtx)
+    // Libs
+    implementation(Dependencies.Android.coreKtx)
 
     // Hilt
     implementation(Dependencies.Hilt.android)

@@ -21,32 +21,41 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion =  Dependencies.Kotlin.compilerExtensionVersion
+    }
 }
 
 dependencies {
     // our modules
     implementation(project(":core:data"))
 
-    // core
-    implementation(Dependencies.Android.codeKtx)
-    implementation(Dependencies.Android.material)
+    // Libs
+    implementation(Dependencies.Android.coreKtx)
     implementation(Dependencies.Compose.ui)
-    implementation(Dependencies.Compose.activityCompose)
-    implementation(Dependencies.Compose.material3)
     implementation(Dependencies.Compose.uiToolingPreview)
+    implementation(Dependencies.Compose.foundation)
+    implementation(Dependencies.Compose.layout)
+    implementation(Dependencies.Compose.material3)
+    implementation(Dependencies.Compose.material)
+    implementation(Dependencies.Compose.materialIconsExtended)
+    implementation(Dependencies.Compose.runtime)
+    implementation(Dependencies.Compose.runtimeLivedata)
+    implementation(Dependencies.Compose.uiTooling)
+    implementation(Dependencies.Compose.uiUtil)
+    implementation(Dependencies.Compose.viewBinding)
+    implementation(Dependencies.Compose.activityCompose)
     implementation(Dependencies.Lifecycle.runtimeKtx)
-    testImplementation(Dependencies.Test.junit)
-    testImplementation(Dependencies.Test.Mockk.mockk)
-    androidTestImplementation(Dependencies.Test.extJunit)
-    androidTestImplementation(Dependencies.Test.espresso)
-    debugImplementation(Dependencies.Compose.uiTooling)
-    debugImplementation(Dependencies.Test.Compose.uiTestManifest)
-    androidTestImplementation(Dependencies.Test.Compose.uiTestJunit4)
+
+    // Glide
+    implementation(Dependencies.Landscapist.glide)
 
     // Hilt
     implementation(Dependencies.Hilt.android)
     kapt(Dependencies.Hilt.kapt)
-
-    // Timber
-    implementation(Dependencies.Timber.timber)
 }
