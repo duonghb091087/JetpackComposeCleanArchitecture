@@ -1,5 +1,5 @@
 plugins {
-    id(Dependencies.Android.application)
+    id(Dependencies.Android.library)
     id(Dependencies.Kotlin.android)
     id(Dependencies.Kotlin.kapt)
     id(Dependencies.Kotlin.parcelize)
@@ -9,26 +9,8 @@ plugins {
 android {
     compileSdk = Versions.compileSdkVersion
     defaultConfig {
-        applicationId = Versions.applicationId
         minSdk = Versions.minSdkVersion
         targetSdk = Versions.targetSdkVersion
-        versionCode = Versions.versionCode
-        versionName = Versions.versionName
-        testInstrumentationRunner = Dependencies.Test.instrumentationRunner
-    }
-
-    buildTypes {
-        getByName("debug") {
-            buildConfigField("String", "BASE_URL", "\"abc\"")
-        }
-        getByName("release") {
-            isMinifyEnabled = false
-            buildConfigField("String", "BASE_URL", "\"def\"")
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
     }
 
     compileOptions {
@@ -44,17 +26,8 @@ android {
         compose = true
     }
 
-    packagingOptions {
-        exclude("/META-INF/{AL2.0,LGPL2.1}")
-    }
-
     composeOptions {
         kotlinCompilerExtensionVersion = Dependencies.Kotlin.compilerExtensionVersion
-    }
-
-    // Allow references to generated code
-    kapt {
-        correctErrorTypes = true
     }
 }
 
@@ -62,10 +35,8 @@ dependencies {
     // depends modules
     implementation(project(":core:ui"))
     implementation(project(":core:data"))
-    implementation(project(":feature:main"))
-    implementation(project(":feature:main-api"))
-    implementation(project(":feature:authentication"))
     implementation(project(":feature:authentication-api"))
+    implementation(project(":feature:main-api"))
 
     // Libs
     implementation(Dependencies.Android.coreKtx)
@@ -83,20 +54,13 @@ dependencies {
     implementation(Dependencies.Compose.viewBinding)
     implementation(Dependencies.Compose.activityCompose)
     implementation(Dependencies.Lifecycle.runtimeKtx)
+    implementation(Dependencies.Lifecycle.viewModelCompose)
+
+    // Glide
+    implementation(Dependencies.Landscapist.glide)
 
     // Hilt
     implementation(Dependencies.Hilt.android)
+    implementation(Dependencies.Hilt.navigationCompose)
     kapt(Dependencies.Hilt.kapt)
-
-    // Startup
-    implementation(Dependencies.Android.startup)
-
-    // LeakCanary
-    debugImplementation(Dependencies.LeakCanary.leakCanary)
-
-    // Splash Screen
-    implementation(Dependencies.SplashScreen.core)
-
-    // Timber
-    implementation(Dependencies.Timber.timber)
 }

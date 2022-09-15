@@ -1,7 +1,7 @@
 package co.jp.main.di
 
 import co.jp.main.navigation.MainApiImpl
-import co.jp.main_api.MainApi
+import co.jp.main.MainApi
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
