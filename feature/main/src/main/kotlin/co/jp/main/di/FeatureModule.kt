@@ -9,7 +9,7 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class NavigationModule {
+abstract class FeatureModule {
 
     @Binds
     abstract fun bindMainApi(

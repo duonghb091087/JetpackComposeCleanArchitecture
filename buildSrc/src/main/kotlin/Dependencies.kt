@@ -22,17 +22,17 @@ object Dependencies {
         const val material3 = "androidx.compose.material3:material3:1.0.0-beta02"
         const val uiToolingPreview = "androidx.compose.ui:ui-tooling-preview:$composeVersion"
         const val uiTooling = "androidx.compose.ui:ui-tooling:$composeVersion"
-        val foundation = "androidx.compose.foundation:foundation:$composeVersion"
-        val layout = "androidx.compose.foundation:foundation-layout:$composeVersion"
-        val material = "androidx.compose.material:material:$composeVersion"
-        val materialIconsExtended = "androidx.compose.material:material-icons-extended:$composeVersion"
-        val runtime = "androidx.compose.runtime:runtime:$composeVersion"
-        val runtimeLivedata = "androidx.compose.runtime:runtime-livedata:$composeVersion"
-        val uiUtil = "androidx.compose.ui:ui-util:$composeVersion"
-        val viewBinding = "androidx.compose.ui:ui-viewbinding:$composeVersion"
+        const val foundation = "androidx.compose.foundation:foundation:$composeVersion"
+        const val layout = "androidx.compose.foundation:foundation-layout:$composeVersion"
+        const val material = "androidx.compose.material:material:$composeVersion"
+        const val materialIconsExtended = "androidx.compose.material:material-icons-extended:$composeVersion"
+        const val runtime = "androidx.compose.runtime:runtime:$composeVersion"
+        const val runtimeLivedata = "androidx.compose.runtime:runtime-livedata:$composeVersion"
+        const val uiUtil = "androidx.compose.ui:ui-util:$composeVersion"
+        const val viewBinding = "androidx.compose.ui:ui-viewbinding:$composeVersion"
 
-        val activityComposeVersion = "1.5.1"
-        val activityCompose = "androidx.activity:activity-compose:$activityComposeVersion"
+        const val activityComposeVersion = "1.5.1"
+        const val activityCompose = "androidx.activity:activity-compose:$activityComposeVersion"
     }
 
     object Kotlin {
@@ -48,7 +48,7 @@ object Dependencies {
     }
 
     object Hilt {
-        const val hiltVersion = "2.38.1"
+        const val hiltVersion = "2.43.2"
         const val plugin = "dagger.hilt.android.plugin"
         const val classpath = "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
         const val android = "com.google.dagger:hilt-android:$hiltVersion"
@@ -57,8 +57,8 @@ object Dependencies {
     }
 
     object Landscapist {
-        val landscapistVersion = "2.0.0"
-        val glide = "com.github.skydoves:landscapist-glide:$landscapistVersion"
+        const val landscapistVersion = "2.0.0"
+        const val glide = "com.github.skydoves:landscapist-glide:$landscapistVersion"
     }
 
     object Jitpack {
@@ -86,9 +86,9 @@ object Dependencies {
         const val instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         object Mockk {
-            val mockkVersion = "1.12.7"
-            val mockk = "io.mockk:mockk:$mockkVersion"
-            val android = "io.mockk:mockk-android:$mockkVersion"
+            const val mockkVersion = "1.12.7"
+            const val mockk = "io.mockk:mockk:$mockkVersion"
+            const val android = "io.mockk:mockk-android:$mockkVersion"
         }
 
         object Compose {

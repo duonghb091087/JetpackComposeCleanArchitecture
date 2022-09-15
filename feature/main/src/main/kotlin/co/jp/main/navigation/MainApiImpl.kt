@@ -2,9 +2,10 @@ package co.jp.main.navigation
 
 import android.util.Log
 import co.jp.main_api.MainApi
+import javax.inject.Inject
 
-class MainApiImpl() : MainApi {
+class MainApiImpl @Inject constructor() : MainApi {
     override fun navigateToHomeScreen() {
-        Log.d("@@@@@@@@@@@@@@@@@@", "okkkkkkkkkkkkkk")
+        Log.d("@@@@@@@@@@@@@@@@@@", "navigateToHomeScreen")
     }
 }
