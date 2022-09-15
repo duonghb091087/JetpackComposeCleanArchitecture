@@ -1,7 +1,9 @@
 plugins {
     id(Dependencies.Android.library)
     id(Dependencies.Kotlin.android)
+    id(Dependencies.Kotlin.kapt)
     id(Dependencies.Kotlin.parcelize)
+    id(Dependencies.Hilt.plugin)
 }
 
 android {
@@ -25,7 +27,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion =  Dependencies.Kotlin.compilerExtensionVersion
+        kotlinCompilerExtensionVersion = Dependencies.Kotlin.compilerExtensionVersion
     }
 }
 
@@ -54,4 +56,8 @@ dependencies {
 
     // Glide
     implementation(Dependencies.Landscapist.glide)
+
+    // Hilt
+    implementation(Dependencies.Hilt.android)
+    kapt(Dependencies.Hilt.kapt)
 }

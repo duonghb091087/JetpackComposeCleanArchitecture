@@ -13,6 +13,7 @@ object Dependencies {
 
     object Lifecycle {
         const val runtimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+        const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1"
     }
 
     object Compose {
@@ -52,6 +53,7 @@ object Dependencies {
         const val classpath = "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
         const val android = "com.google.dagger:hilt-android:$hiltVersion"
         const val kapt = "com.google.dagger:hilt-android-compiler:$hiltVersion"
+        const val navigationCompose = "androidx.hilt:hilt-navigation-compose:1.0.0"
     }
 
     object Landscapist {

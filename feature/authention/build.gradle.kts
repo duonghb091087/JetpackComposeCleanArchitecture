@@ -27,7 +27,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion =  Dependencies.Kotlin.compilerExtensionVersion
+        kotlinCompilerExtensionVersion = Dependencies.Kotlin.compilerExtensionVersion
     }
 }
 
@@ -36,6 +36,7 @@ dependencies {
     implementation(project(":core:ui"))
     implementation(project(":core:data"))
     implementation(project(":feature:authention-api"))
+    implementation(project(":feature:main-api"))
 
     // Libs
     implementation(Dependencies.Android.coreKtx)
@@ -53,11 +54,13 @@ dependencies {
     implementation(Dependencies.Compose.viewBinding)
     implementation(Dependencies.Compose.activityCompose)
     implementation(Dependencies.Lifecycle.runtimeKtx)
+    implementation(Dependencies.Lifecycle.viewModelCompose)
 
     // Glide
     implementation(Dependencies.Landscapist.glide)
 
     // Hilt
     implementation(Dependencies.Hilt.android)
+    implementation(Dependencies.Hilt.navigationCompose)
     kapt(Dependencies.Hilt.kapt)
 }

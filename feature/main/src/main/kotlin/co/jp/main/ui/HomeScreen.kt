@@ -1,21 +1,19 @@
-package co.jp.authention.ui
+package co.jp.main.ui
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.hilt.navigation.compose.hiltViewModel
 import co.jp.core.ui.compose.AppTheme
 
 @Composable
-fun LoginScreen(viewModel: LoginViewModel = hiltViewModel()) {
-    Text(text = "Login")
-    viewModel.navigateHomeScreen()
+fun HomeScreen() {
+    Text(text = "Home")
 }
 
 @Preview(showBackground = true)
 @Composable
-fun LoginScreenPreview() {
+fun HomeScreenPreview() {
     AppTheme {
-        LoginScreen()
+        HomeScreen()
     }
 }
