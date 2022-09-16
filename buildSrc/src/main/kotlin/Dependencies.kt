@@ -79,16 +79,6 @@ object Dependencies {
         const val core = "androidx.core:core-splashscreen:1.0.0-alpha02"
     }
 
-    object Accompanist {
-        private const val VERSION = "0.25.1"
-        const val SWIPEREFRESH = "com.google.accompanist:accompanist-swiperefresh:$VERSION"
-        const val INSETS = "com.google.accompanist:accompanist-insets:$VERSION"
-        const val SYSTEMUICONTROLLER =
-            "com.google.accompanist:accompanist-systemuicontroller:$VERSION"
-        const val PAGER = "com.google.accompanist:accompanist-pager:$VERSION"
-        const val INDICATORS = "com.google.accompanist:accompanist-pager-indicators:$VERSION"
-    }
-
     object Test {
         const val junit = "junit:junit:4.13.2"
         const val extJunit = "androidx.test.ext:junit:1.1.2"

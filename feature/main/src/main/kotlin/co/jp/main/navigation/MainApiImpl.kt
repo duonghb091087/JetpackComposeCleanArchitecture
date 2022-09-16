@@ -1,12 +1,12 @@
 package co.jp.main.navigation
 
-import android.util.Log
+import androidx.navigation.NavController
 import co.jp.main.MainApi
-import javax.inject.Inject
 
-class MainApiImpl @Inject constructor(
+class MainApiImpl(
+    private val navController: NavController
 ) : MainApi {
     override fun navigateToHome() {
-        Log.d("@@@@@@@@@@@@@@@@@@", "navigateToHomeScreen")
+        navController.navigate("home")
     }
 }

@@ -8,11 +8,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    private val savedStateHandle: SavedStateHandle,
-    private val mainApi: MainApi
+    private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
-
-    fun navigateHomeScreen() {
-        mainApi.navigateToHome()
-    }
 }

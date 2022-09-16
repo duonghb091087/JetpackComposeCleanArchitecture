@@ -12,29 +12,27 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import co.jp.authentication.AuthenticationNavigator
+import co.jp.authentication.navigation.AuthenticationApiImpl
 import co.jp.authentication.navigation.authenticationGraph
-import co.jp.core.ui.compose.AppTheme
-import co.jp.main.LocalNavigator
-import co.jp.main.navigation.AppNavigator
+import co.jp.core.ui.theme.AppTheme
+import co.jp.main.MainNavigator
+import co.jp.main.navigation.MainApiImpl
 import co.jp.main.navigation.mainGraph
-import com.google.accompanist.insets.ProvideWindowInsets
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ProvideWindowInsets {
-                AppTheme {
-                    // A surface container using the 'background' color from the theme
-                    Surface(
-                        modifier = Modifier.fillMaxSize(),
-                        color = MaterialTheme.colorScheme.background
-                    ) {
-                        AppContent()
-                    }
+            AppTheme {
+                // A surface container using the 'background' color from the theme
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    AppContent()
                 }
             }
         }
@@ -45,16 +43,17 @@ class MainActivity : ComponentActivity() {
 fun AppContent() {
     val navController = rememberNavController()
     CompositionLocalProvider(
-        LocalNavigator provides AppNavigator(navController)
+        MainNavigator provides MainApiImpl(navController),
+        AuthenticationNavigator provides AuthenticationApiImpl(navController)
     ) {
-        AppNavHost()
+        AppNavigation(navController)
     }
 }
 
 @Composable
-fun AppNavHost(
+fun AppNavigation(
+    navController: NavHostController,
     modifier: Modifier = Modifier,
-    navController: NavHostController = rememberNavController(),
     startDestination: String = "authentication"
 ) {
     NavHost(
@@ -62,7 +61,7 @@ fun AppNavHost(
         navController = navController,
         startDestination = startDestination
     ) {
-        mainGraph(navController)
-        authenticationGraph(navController)
+        mainGraph()
+        authenticationGraph()
     }
 }

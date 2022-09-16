@@ -1,4 +1,4 @@
-package co.jp.core.ui.compose
+package co.jp.core.ui.theme
 
 import android.app.Activity
 import android.os.Build

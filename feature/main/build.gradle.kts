@@ -36,6 +36,7 @@ dependencies {
     implementation(project(":core:ui"))
     implementation(project(":core:data"))
     implementation(project(":feature:main-api"))
+    implementation(project(":feature:authentication-api"))
 
     // Libs
     implementation(Dependencies.Android.coreKtx)

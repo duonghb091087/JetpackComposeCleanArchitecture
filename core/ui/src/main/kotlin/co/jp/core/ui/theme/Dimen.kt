@@ -1,4 +1,4 @@
-package co.jp.core.ui.compose
+package co.jp.core.ui.theme
 
 import androidx.compose.ui.unit.dp
 

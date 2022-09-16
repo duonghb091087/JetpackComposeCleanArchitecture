@@ -1,16 +1,16 @@
 package co.jp.authentication.navigation
 
-import android.util.Log
+import androidx.navigation.NavController
 import co.jp.authentication.AuthenticationApi
-import javax.inject.Inject
 
-class AuthenticationApiImpl @Inject constructor(
+class AuthenticationApiImpl(
+    private val navController: NavController
 ) : AuthenticationApi {
     override fun navigateToLogin() {
-        Log.d("@@@@@@@@@@@@@@@@@@", "navigateToLoginScreen")
+        navController.navigate("login")
     }
 
     override fun navigateToRegister() {
-        Log.d("@@@@@@@@@@@@@@@@@@", "navigateToRegisterScreen")
+        navController.navigate("registration")
     }
 }

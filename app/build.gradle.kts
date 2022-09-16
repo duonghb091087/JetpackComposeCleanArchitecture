@@ -85,7 +85,6 @@ dependencies {
     implementation(Dependencies.Lifecycle.viewModelCompose)
     implementation(Dependencies.Compose.navigation)
     implementation(Dependencies.Lifecycle.runtimeKtx)
-    implementation(Dependencies.Accompanist.INSETS)
 
     // Hilt
     implementation(Dependencies.Hilt.android)
