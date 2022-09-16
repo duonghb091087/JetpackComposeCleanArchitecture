@@ -90,9 +90,6 @@ dependencies {
     implementation(Dependencies.Hilt.android)
     kapt(Dependencies.Hilt.kapt)
 
-    // Startup
-    implementation(Dependencies.Android.startup)
-
     // LeakCanary
     debugImplementation(Dependencies.LeakCanary.leakCanary)
 
