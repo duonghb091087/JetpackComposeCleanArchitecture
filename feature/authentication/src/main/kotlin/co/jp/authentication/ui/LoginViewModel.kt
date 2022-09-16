@@ -13,6 +13,6 @@ class LoginViewModel @Inject constructor(
 ) : ViewModel() {
 
     fun navigateHomeScreen() {
-        mainApi.navigateToHomeScreen()
+        mainApi.navigateToHome()
     }
 }

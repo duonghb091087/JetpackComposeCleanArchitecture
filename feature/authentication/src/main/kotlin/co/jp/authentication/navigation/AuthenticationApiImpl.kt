@@ -5,11 +5,11 @@ import co.jp.authentication.AuthenticationApi
 import javax.inject.Inject
 
 class AuthenticationApiImpl @Inject constructor() : AuthenticationApi {
-    override fun navigateToLoginScreen() {
+    override fun navigateToLogin() {
         Log.d("@@@@@@@@@@@@@@@@@@", "navigateToLoginScreen")
     }
 
-    override fun navigateToRegisterScreen() {
+    override fun navigateToRegister() {
         Log.d("@@@@@@@@@@@@@@@@@@", "navigateToRegisterScreen")
     }
 }
