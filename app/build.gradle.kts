@@ -82,7 +82,10 @@ dependencies {
     implementation(Dependencies.Compose.uiUtil)
     implementation(Dependencies.Compose.viewBinding)
     implementation(Dependencies.Compose.activityCompose)
+    implementation(Dependencies.Lifecycle.viewModelCompose)
+    implementation(Dependencies.Compose.navigation)
     implementation(Dependencies.Lifecycle.runtimeKtx)
+    implementation(Dependencies.Accompanist.INSETS)
 
     // Hilt
     implementation(Dependencies.Hilt.android)

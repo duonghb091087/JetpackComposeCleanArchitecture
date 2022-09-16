@@ -31,9 +31,8 @@ object Dependencies {
         const val runtimeLivedata = "androidx.compose.runtime:runtime-livedata:$composeVersion"
         const val uiUtil = "androidx.compose.ui:ui-util:$composeVersion"
         const val viewBinding = "androidx.compose.ui:ui-viewbinding:$composeVersion"
-
-        const val activityComposeVersion = "1.5.1"
-        const val activityCompose = "androidx.activity:activity-compose:$activityComposeVersion"
+        const val navigation = "androidx.navigation:navigation-compose:2.5.2"
+        const val activityCompose = "androidx.activity:activity-compose:1.5.1"
     }
 
     object Kotlin {
@@ -78,6 +77,16 @@ object Dependencies {
 
     object SplashScreen {
         const val core = "androidx.core:core-splashscreen:1.0.0-alpha02"
+    }
+
+    object Accompanist {
+        private const val VERSION = "0.25.1"
+        const val SWIPEREFRESH = "com.google.accompanist:accompanist-swiperefresh:$VERSION"
+        const val INSETS = "com.google.accompanist:accompanist-insets:$VERSION"
+        const val SYSTEMUICONTROLLER =
+            "com.google.accompanist:accompanist-systemuicontroller:$VERSION"
+        const val PAGER = "com.google.accompanist:accompanist-pager:$VERSION"
+        const val INDICATORS = "com.google.accompanist:accompanist-pager-indicators:$VERSION"
     }
 
     object Test {

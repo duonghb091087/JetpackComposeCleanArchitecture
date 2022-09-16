@@ -24,4 +24,5 @@ android {
 dependencies {
     // Libs
     implementation(Dependencies.Android.coreKtx)
+    implementation(Dependencies.Compose.runtime)
 }

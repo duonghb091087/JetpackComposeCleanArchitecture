@@ -53,6 +53,8 @@ dependencies {
     implementation(Dependencies.Compose.viewBinding)
     implementation(Dependencies.Compose.activityCompose)
     implementation(Dependencies.Lifecycle.runtimeKtx)
+    implementation(Dependencies.Lifecycle.viewModelCompose)
+    implementation(Dependencies.Compose.navigation)
 
     // Glide
     implementation(Dependencies.Landscapist.glide)
