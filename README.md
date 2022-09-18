@@ -1,4 +1,5 @@
 # Rakuten-Android
+
 Rakuten Android app
 
 ## Environment
@@ -7,6 +8,7 @@ Rakuten Android app
 - Kotlin
 
 ## Code formating
+
 - Using Ktlint
 
 ## Testing
