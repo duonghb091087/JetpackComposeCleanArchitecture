@@ -18,6 +18,7 @@ import co.jp.authentication.navigation.AuthenticationDirections
 import co.jp.authentication.ui.LoginViewModel.Effect
 import co.jp.authentication.ui.LoginViewModel.Event
 import co.jp.core.component.AppToolbar
+import co.jp.core.component.CommonAlertDialog
 import co.jp.core.component.LoadingDialog
 import co.jp.core.navigation.AppNavigator
 import co.jp.core.theme.AppTheme
@@ -31,8 +32,13 @@ fun LoginScreen(
 ) {
     val navigator = AppNavigator.current
     val mainNavigator = MainNavigator.current
+
     val uiState = viewModel.uiState.collectAsState()
+    val email = uiState.value.email
+    val password = uiState.value.password
     val loading = uiState.value.loading
+    val showError = uiState.value.error
+    val errorMessage = uiState.value.errorMessage
 
     viewModel.onEffect.collectInLaunchedEffect { effect ->
         when (effect) {
@@ -52,9 +58,7 @@ fun LoginScreen(
         Button(
             modifier = Modifier.size(124.dp),
             onClick = {
-                viewModel.onEvent(
-                    Event.Submit("nokadev@nokasoft.com", "abc123")
-                )
+                viewModel.onEvent(Event.Submit(email, password))
             }
         ) {
             Text("Submit Login to Home")
@@ -75,6 +79,20 @@ fun LoginScreen(
         // show loading
         if (loading) {
             LoadingDialog()
+        }
+
+        if (showError) {
+            CommonAlertDialog(
+                title = "ERROR",
+                confirmButtonText = "Cancel",
+                message = errorMessage,
+                onClickConfirmButton = {
+                    viewModel.onEvent(Event.DismissDialog)
+                },
+                onDismissRequest = {
+                    viewModel.onEvent(Event.DismissDialog)
+                }
+            )
         }
     }
 }

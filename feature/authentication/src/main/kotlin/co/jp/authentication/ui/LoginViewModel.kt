@@ -7,6 +7,7 @@ import co.jp.authentication.data.usecase.LoginUsecase
 import co.jp.core.di.ResourceProvider
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
@@ -16,8 +17,6 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.onEach
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
@@ -44,6 +43,7 @@ class LoginViewModel @Inject constructor(
                     showLoading(false)
                 }
                 .catch {
+                    showError(true, it.message.orEmpty())
                 }
                 .collect {
                     _onEffect.send(Effect.SuccessLogin)
@@ -57,6 +57,15 @@ class LoginViewModel @Inject constructor(
         }
     }
 
+    private fun showError(isShow: Boolean, message: String = "") {
+        _uiState.update {
+            it.copy(
+                error = isShow,
+                errorMessage = message
+            )
+        }
+    }
+
     fun onEvent(event: Event) {
         when (event) {
             is Event.Submit -> doLogin(event.email, event.password)
@@ -66,6 +75,7 @@ class LoginViewModel @Inject constructor(
             is Event.ChangedPassword -> _uiState.update {
                 it.copy(email = event.password)
             }
+            is Event.DismissDialog -> showError(false)
         }
     }
 
@@ -73,13 +83,15 @@ class LoginViewModel @Inject constructor(
         data class Submit(val email: String, val password: String) : Event()
         data class ChangedEmail(val email: String) : Event()
         data class ChangedPassword(val password: String) : Event()
+        object DismissDialog : Event()
     }
 
     data class State(
-        val email: String = "",
-        val password: String = "",
+        val email: String = "nokadev@nokasoft.com",
+        val password: String = "abc123",
         val loading: Boolean = false,
-        val failureLogin: Boolean = false
+        val error: Boolean = false,
+        val errorMessage: String = ""
     )
 
     sealed class Effect {
