@@ -1,7 +1,7 @@
 package co.jp.main.navigation
 
 import androidx.navigation.NamedNavArgument
-import co.jp.core.ui.navigation.NavigationCommand
+import co.jp.core.navigation.NavigationCommand
 
 object MainDirections {
     val root = object : NavigationCommand {

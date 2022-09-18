@@ -16,7 +16,7 @@ import co.jp.authentication.AuthenticationNavigator
 import co.jp.authentication.navigation.AuthenticationApiImpl
 import co.jp.authentication.navigation.AuthenticationDirections
 import co.jp.authentication.navigation.authenticationGraph
-import co.jp.core.ui.theme.AppTheme
+import co.jp.core.theme.AppTheme
 import co.jp.main.MainNavigator
 import co.jp.main.navigation.MainApiImpl
 import co.jp.main.navigation.mainGraph

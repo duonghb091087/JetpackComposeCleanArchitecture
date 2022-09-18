@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import co.jp.authentication.AuthenticationNavigator
 import co.jp.authentication.ui.LoginViewModel.Event
-import co.jp.core.ui.theme.AppTheme
+import co.jp.core.theme.AppTheme
 import co.jp.main.MainNavigator
 
 @Composable

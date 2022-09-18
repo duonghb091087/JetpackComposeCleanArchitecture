@@ -32,11 +32,6 @@ android {
 }
 
 dependencies {
-    // depends modules
-    implementation(project(":core"))
-    implementation(project(":feature:main-api"))
-    implementation(project(":feature:authentication-api"))
-
     // Libs
     implementation(Dependencies.Android.coreKtx)
     implementation(Dependencies.Compose.ui)
@@ -60,10 +55,15 @@ dependencies {
     implementation(Dependencies.Hilt.android)
     kapt(Dependencies.Hilt.kapt)
 
-    // Test
-    testImplementation(Dependencies.Test.junit)
-    androidTestImplementation(Dependencies.Test.extJunit)
-    androidTestImplementation(Dependencies.Test.espresso)
-    androidTestImplementation(Dependencies.Test.Mockk.mockk)
-    androidTestImplementation(Dependencies.Test.Mockk.android)
+    // Glide
+    implementation(Dependencies.Landscapist.glide)
+
+    // Network
+    implementation(Dependencies.Okhttp.okhttp)
+    implementation(Dependencies.Okhttp.logging)
+    implementation(Dependencies.Retrofit.retrofit)
+    implementation(Dependencies.Retrofit.gson)
+
+    // Timber
+    implementation(Dependencies.Timber.timber)
 }

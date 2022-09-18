@@ -2,7 +2,7 @@ package co.jp.authentication.ui
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import co.jp.core.ui.di.ResourceProvider
+import co.jp.core.di.ResourceProvider
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

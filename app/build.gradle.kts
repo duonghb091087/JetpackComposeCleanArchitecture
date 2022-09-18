@@ -60,8 +60,7 @@ android {
 
 dependencies {
     // depends modules
-    implementation(project(":core:ui"))
-    implementation(project(":core:data"))
+    implementation(project(":core"))
     implementation(project(":feature:main"))
     implementation(project(":feature:main-api"))
     implementation(project(":feature:authentication"))

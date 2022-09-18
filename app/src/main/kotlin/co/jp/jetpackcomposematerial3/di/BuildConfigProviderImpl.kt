@@ -1,6 +1,6 @@
 package co.jp.jetpackcomposematerial3.di
 
-import co.jp.core.ui.di.BuildConfigProvider
+import co.jp.core.di.BuildConfigProvider
 import co.jp.jetpackcomposematerial3.BuildConfig
 
 class BuildConfigProviderImpl : BuildConfigProvider {

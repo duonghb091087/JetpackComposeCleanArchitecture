@@ -3,7 +3,7 @@ package co.jp.authentication.navigation
 import androidx.navigation.NamedNavArgument
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
-import co.jp.core.ui.navigation.NavigationCommand
+import co.jp.core.navigation.NavigationCommand
 
 object AuthenticationDirections {
     // no argument

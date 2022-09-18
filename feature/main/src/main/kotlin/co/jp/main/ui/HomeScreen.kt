@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import co.jp.authentication.AuthenticationNavigator
-import co.jp.core.ui.theme.AppTheme
+import co.jp.core.theme.AppTheme
 
 @Composable
 fun HomeScreen() {
