@@ -10,6 +10,10 @@ class LoginRepository @Inject constructor(
     private val api: AuthenticationServiceApi
 ) {
     suspend fun doLogin(email: String, password: String) = flow {
-        emit(api.login(email, password))
+        emit(api.login())
+    }.flowOn(Dispatchers.IO)
+
+    suspend fun testLoginError(email: String, password: String) = flow {
+        emit(api.testLoginError())
     }.flowOn(Dispatchers.IO)
 }

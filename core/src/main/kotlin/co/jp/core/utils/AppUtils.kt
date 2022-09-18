@@ -1,3 +1,3 @@
-package co.jp.core.utils.extension
+package co.jp.core.utils
 
 object AppUtils

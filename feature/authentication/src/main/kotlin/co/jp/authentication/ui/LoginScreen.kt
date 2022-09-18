@@ -61,7 +61,15 @@ fun LoginScreen(
                 viewModel.onEvent(Event.Submit(email, password))
             }
         ) {
-            Text("Submit Login to Home")
+            Text("Login success")
+        }
+        Button(
+            modifier = Modifier.size(124.dp),
+            onClick = {
+                viewModel.onEvent(Event.SubmitError(email, password))
+            }
+        ) {
+            Text("Login error")
         }
         Button(
             modifier = Modifier.size(124.dp),

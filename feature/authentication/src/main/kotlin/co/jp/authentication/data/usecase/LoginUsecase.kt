@@ -10,4 +10,9 @@ class LoginUsecase @Inject constructor(
         email: String,
         password: String
     ) = repository.doLogin(email, password)
+
+    suspend fun testLoginError(
+        email: String,
+        password: String
+    ) = repository.testLoginError(email, password)
 }

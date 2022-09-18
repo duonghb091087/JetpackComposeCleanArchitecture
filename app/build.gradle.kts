@@ -19,7 +19,7 @@ android {
 
     buildTypes {
         getByName("debug") {
-            buildConfigField("String", "API_ENDPOINT", "\"https://www.facebook.com/\"")
+            buildConfigField("String", "API_ENDPOINT", "\"https://newsapi.org/v2/\"")
         }
         getByName("release") {
             isMinifyEnabled = false
