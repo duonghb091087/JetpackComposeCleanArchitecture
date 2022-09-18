@@ -14,7 +14,7 @@ Rakuten Android app
 ## Testing
 
 - Write unit tests for ViewModels.
-- Using Mockk, JunitTest ...
+- Using Mockk, JUnitTest ...
 
 ## Multimodule
 
