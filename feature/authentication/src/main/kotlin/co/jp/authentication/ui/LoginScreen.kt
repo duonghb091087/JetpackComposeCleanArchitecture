@@ -9,6 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -16,6 +17,7 @@ import co.jp.authentication.navigation.AuthenticationDirections
 import co.jp.core.component.AppToolbar
 import co.jp.core.navigation.AppNavigator
 import co.jp.core.theme.AppTheme
+import co.jp.feature.authentication.R
 import co.jp.main.MainNavigator
 
 @Composable
@@ -30,7 +32,7 @@ fun LoginScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        AppToolbar("Login")
+        AppToolbar(stringResource(R.string.title_login))
         Button(
             modifier = Modifier.size(124.dp),
             onClick = {
