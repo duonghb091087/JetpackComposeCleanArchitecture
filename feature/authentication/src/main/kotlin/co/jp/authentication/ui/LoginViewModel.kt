@@ -1,6 +1,5 @@
 package co.jp.authentication.ui
 
-import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -17,6 +16,8 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.onEach
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
@@ -34,45 +35,54 @@ class LoginViewModel @Inject constructor(
     private fun doLogin(email: String, password: String) {
         viewModelScope.launch {
             loginUsecase.execute(email, password)
-                .onStart { }
-                .onCompletion {}
+                .onStart {
+                    showLoading(true)
+                }
+                .onCompletion {
+                    // TODO test show loading
+                    delay(1000)
+                    showLoading(false)
+                }
                 .catch {
-                    Log.e("@@@@@@@@@@@@@@@@", "error : ${it.message}")
-                    _onEffect.send(Effect.LoginFailure)
                 }
                 .collect {
-                    _onEffect.send(Effect.LoginSuccess)
+                    _onEffect.send(Effect.SuccessLogin)
                 }
+        }
+    }
+
+    private fun showLoading(isShow: Boolean) {
+        _uiState.update {
+            it.copy(loading = isShow)
         }
     }
 
     fun onEvent(event: Event) {
         when (event) {
-            is Event.Login -> doLogin(event.email, event.password)
+            is Event.Submit -> doLogin(event.email, event.password)
             is Event.ChangedEmail -> _uiState.update {
                 it.copy(email = event.email)
             }
             is Event.ChangedPassword -> _uiState.update {
                 it.copy(email = event.password)
             }
-            else -> {}
         }
     }
 
     sealed class Event {
-        data class Login(val email: String, val password: String) : Event()
+        data class Submit(val email: String, val password: String) : Event()
         data class ChangedEmail(val email: String) : Event()
         data class ChangedPassword(val password: String) : Event()
     }
 
     data class State(
         val email: String = "",
-        val password: String = ""
+        val password: String = "",
+        val loading: Boolean = false,
+        val failureLogin: Boolean = false
     )
 
     sealed class Effect {
-        object LoginSuccess : Effect()
-        object LoginFailure : Effect()
-        data class Loading(val isShow: Boolean) : Effect()
+        object SuccessLogin : Effect()
     }
 }
