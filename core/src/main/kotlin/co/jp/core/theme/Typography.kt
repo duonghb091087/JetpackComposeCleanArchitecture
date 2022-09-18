@@ -1,6 +1,7 @@
 package co.jp.core.theme
 
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 import kotlin.math.round
@@ -24,7 +25,8 @@ private fun getLineHeight(fontSize: TextUnit): TextUnit {
 
 val textStyleTitle = TextStyle(
     color = textColorPrimary,
-    fontSize = textXLarge,
+    fontSize = textLarge,
+    FontWeight.Bold,
     lineHeight = getLineHeight(textXLarge)
 )
 
@@ -35,7 +37,7 @@ val textStyleTitleLarge = textStyleTitle.copy(
 
 val textStyleSubHead = TextStyle(
     color = textColorPrimary,
-    fontSize = textLarge,
+    fontSize = textMedium,
     lineHeight = getLineHeight(textLarge)
 )
 

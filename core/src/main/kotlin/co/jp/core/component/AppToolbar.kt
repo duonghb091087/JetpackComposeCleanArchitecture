@@ -9,7 +9,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import co.jp.core.R
-import co.jp.core.theme.appColors
+import co.jp.core.theme.textStyleTitle
 
 @Composable
 fun AppToolbar(
@@ -25,8 +25,10 @@ fun AppToolbar(
         } else {
             Text(
                 text = title,
+                modifier = Modifier.fillMaxWidth(),
                 color = Color.White,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                style = textStyleTitle
             )
         }
     }
