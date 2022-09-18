@@ -1,6 +1,7 @@
-package co.jp.jetpackcomposematerial3.di
+package co.jp.core.ui.di
 
-import co.jp.core.ui.di.BuildConfigProvider
+import co.jp.core.ui.analytics.EventTracker
+import co.jp.core.ui.analytics.EventTrackerImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -9,10 +10,9 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {
+object CoreModule {
+
     @Singleton
     @Provides
-    fun provideBuildConfigProvider(): BuildConfigProvider {
-        return BuildConfigProviderImpl()
-    }
+    fun provideEventTracker(): EventTracker = EventTrackerImpl()
 }

@@ -66,4 +66,7 @@ dependencies {
     implementation(Dependencies.Okhttp.logging)
     implementation(Dependencies.Retrofit.retrofit)
     implementation(Dependencies.Retrofit.gson)
+
+    // Timber
+    implementation(Dependencies.Timber.timber)
 }

@@ -1,4 +1,4 @@
-package co.jp.core.data.analytics
+package co.jp.core.ui.analytics
 
 import android.os.Bundle
 import timber.log.Timber

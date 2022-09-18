@@ -5,7 +5,7 @@ import co.jp.authentication.data.model.response.RegisterResponse
 import retrofit2.Response
 import retrofit2.http.POST
 
-interface AuthenticationService {
+interface AuthenticationServiceApi {
     @POST("login")
     suspend fun login(email: String, password: String): Response<LoginResponse>
 

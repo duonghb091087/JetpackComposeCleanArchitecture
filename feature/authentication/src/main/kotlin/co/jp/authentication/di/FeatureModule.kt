@@ -1,6 +1,6 @@
 package co.jp.authentication.di
 
-import co.jp.jetpackcomposematerial3.network.AuthenticationService
+import co.jp.jetpackcomposematerial3.network.AuthenticationServiceApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,6 +14,6 @@ object FeatureModule {
 
     @Singleton
     @Provides
-    fun provideAuthenticationService(retrofit: Retrofit): AuthenticationService =
-        retrofit.create(AuthenticationService::class.java)
+    fun provideAuthenticationService(retrofit: Retrofit): AuthenticationServiceApi =
+        retrofit.create(AuthenticationServiceApi::class.java)
 }
