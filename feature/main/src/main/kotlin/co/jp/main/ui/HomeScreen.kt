@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import co.jp.authentication.AuthenticationNavigator
+import co.jp.core.component.AppToolbar
 import co.jp.core.navigation.AppNavigator
 import co.jp.core.theme.AppTheme
 
@@ -19,7 +20,7 @@ fun HomeScreen(
     val navigator = AppNavigator.current
     val authenticationNavigator = AuthenticationNavigator.current
     Column {
-        Text("HOME")
+        AppToolbar("Home")
         Text("userName : $userName")
         Button(
             modifier = Modifier.size(124.dp),
