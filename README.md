@@ -7,7 +7,7 @@ Rakuten Android app
 - Kotlin
 
 ## Code formating
-- Use Ktlint
+- Using Ktlint
 
 ## Testing
 
