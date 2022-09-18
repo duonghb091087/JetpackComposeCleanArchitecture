@@ -14,13 +14,6 @@ fun NavGraphBuilder.authenticationGraph() {
     ) {
         composable(AuthenticationDirections.login.destination) { LoginScreen() }
         composable(AuthenticationDirections.registration.destination) { RegisterScreen() }
-        composable(
-            route = AuthenticationDirections.ForgotPassword.destination,
-            arguments = AuthenticationDirections.ForgotPassword.arguments
-        ) { backStackEntry ->
-            val email =
-                backStackEntry.arguments?.getString(AuthenticationDirections.ForgotPassword.KEY_EMAIL)
-            ForgotPasswordScreen(email)
-        }
+        composable(AuthenticationDirections.forgotPassword.destination) { ForgotPasswordScreen() }
     }
 }

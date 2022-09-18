@@ -60,6 +60,12 @@ dependencies {
     implementation(Dependencies.Hilt.android)
     kapt(Dependencies.Hilt.kapt)
 
+    // Network
+    implementation(Dependencies.Okhttp.okhttp)
+    implementation(Dependencies.Okhttp.logging)
+    implementation(Dependencies.Retrofit.retrofit)
+    implementation(Dependencies.Retrofit.gson)
+
     // Test
     testImplementation(Dependencies.Test.junit)
     androidTestImplementation(Dependencies.Test.extJunit)

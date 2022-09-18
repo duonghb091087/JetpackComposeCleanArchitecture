@@ -14,7 +14,7 @@ class AuthenticationApiImpl(
         navController.navigate(AuthenticationDirections.registration.destination)
     }
 
-    override fun navigateToForgotPassword(email: String?) {
-        navController.navigate(AuthenticationDirections.ForgotPassword.navigate(email))
+    override fun navigateToForgotPassword() {
+        navController.navigate(AuthenticationDirections.forgotPassword.destination)
     }
 }

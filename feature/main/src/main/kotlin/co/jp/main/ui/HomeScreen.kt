@@ -1,5 +1,6 @@
 package co.jp.main.ui
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -11,13 +12,19 @@ import co.jp.authentication.AuthenticationNavigator
 import co.jp.core.theme.AppTheme
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    userName: String
+) {
     val navigation = AuthenticationNavigator.current
-    Button(
-        modifier = Modifier.size(124.dp),
-        onClick = { navigation.navigateToForgotPassword("nokadev@nokasoft.com") }
-    ) {
-        Text("Logout")
+    Column {
+        Text("HOME")
+        Text("userName : $userName")
+        Button(
+            modifier = Modifier.size(124.dp),
+            onClick = { navigation.navigateToLogin() }
+        ) {
+            Text("Logout")
+        }
     }
 }
 
@@ -25,6 +32,6 @@ fun HomeScreen() {
 @Composable
 fun HomeScreenPreview() {
     AppTheme {
-        HomeScreen()
+        HomeScreen("nokadev")
     }
 }

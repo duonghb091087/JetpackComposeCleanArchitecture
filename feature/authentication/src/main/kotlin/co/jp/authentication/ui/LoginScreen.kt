@@ -21,16 +21,17 @@ fun LoginScreen(
     val mainNavigator = MainNavigator.current
     val authenticationNavigator = AuthenticationNavigator.current
     Column {
+        Text("Login")
         Button(
             modifier = Modifier.size(124.dp),
             onClick = {
-                viewModel.onEvent(
+               /* viewModel.onEvent(
                     Event.Login("nokadev@nokasoft.com", "abc123")
-                )
-                // mainNavigator.navigateToHome()
+                )*/
+                mainNavigator.navigateToHome("nokadev")
             }
         ) {
-            Text("Home")
+            Text("Submit Login to Home")
         }
         Button(
             modifier = Modifier.size(124.dp),

@@ -8,10 +8,9 @@ import co.jp.core.theme.AppTheme
 
 @Composable
 fun ForgotPasswordScreen(
-    email: String?,
     viewModel: ForgotPasswordViewModel = hiltViewModel()
 ) {
-    Text(text = "Forgot Password with email : $email")
+    Text(text = "Forgot Password")
 }
 
 @Preview(showBackground = true)

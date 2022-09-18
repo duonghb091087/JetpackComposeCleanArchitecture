@@ -5,7 +5,7 @@ import androidx.compose.runtime.staticCompositionLocalOf
 interface AuthenticationApi {
     fun navigateToLogin()
     fun navigateToRegister()
-    fun navigateToForgotPassword(email: String? = null)
+    fun navigateToForgotPassword()
 }
 
 val AuthenticationNavigator = staticCompositionLocalOf<AuthenticationApi> {

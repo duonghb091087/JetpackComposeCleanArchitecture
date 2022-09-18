@@ -66,4 +66,11 @@ dependencies {
 
     // Timber
     implementation(Dependencies.Timber.timber)
+
+    // Test
+    testImplementation(Dependencies.Test.junit)
+    androidTestImplementation(Dependencies.Test.extJunit)
+    androidTestImplementation(Dependencies.Test.espresso)
+    androidTestImplementation(Dependencies.Test.Mockk.mockk)
+    androidTestImplementation(Dependencies.Test.Mockk.android)
 }
