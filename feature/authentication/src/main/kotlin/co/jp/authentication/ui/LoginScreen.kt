@@ -9,8 +9,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import co.jp.authentication.AuthenticationNavigator
+import co.jp.authentication.navigation.AuthenticationDirections
 import co.jp.authentication.ui.LoginViewModel.Event
+import co.jp.core.navigation.AppNavigator
 import co.jp.core.theme.AppTheme
 import co.jp.main.MainNavigator
 
@@ -18,8 +19,8 @@ import co.jp.main.MainNavigator
 fun LoginScreen(
     viewModel: LoginViewModel = hiltViewModel()
 ) {
+    val navigator = AppNavigator.current
     val mainNavigator = MainNavigator.current
-    val authenticationNavigator = AuthenticationNavigator.current
     Column {
         Text("Login")
         Button(
@@ -28,6 +29,7 @@ fun LoginScreen(
                /* viewModel.onEvent(
                     Event.Login("nokadev@nokasoft.com", "abc123")
                 )*/
+                navigator.pop()
                 mainNavigator.navigateToHome("nokadev")
             }
         ) {
@@ -35,9 +37,15 @@ fun LoginScreen(
         }
         Button(
             modifier = Modifier.size(124.dp),
-            onClick = { authenticationNavigator.navigateToRegister() }
+            onClick = { navigator.push(AuthenticationDirections.registration.route) }
         ) {
             Text("Register")
+        }
+        Button(
+            modifier = Modifier.size(124.dp),
+            onClick = { navigator.push(AuthenticationDirections.forgotPassword.route) }
+        ) {
+            Text("Forgot password")
         }
     }
 }

@@ -7,14 +7,6 @@ class AuthenticationApiImpl(
     private val navController: NavController
 ) : AuthenticationApi {
     override fun navigateToLogin() {
-        navController.navigate(AuthenticationDirections.login.destination)
-    }
-
-    override fun navigateToRegister() {
-        navController.navigate(AuthenticationDirections.registration.destination)
-    }
-
-    override fun navigateToForgotPassword() {
-        navController.navigate(AuthenticationDirections.forgotPassword.destination)
+        navController.navigate(AuthenticationDirections.login.route)
     }
 }

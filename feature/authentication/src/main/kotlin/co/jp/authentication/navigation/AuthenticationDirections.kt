@@ -1,30 +1,30 @@
 package co.jp.authentication.navigation
 
 import androidx.navigation.NamedNavArgument
-import co.jp.core.navigation.NavigationCommand
+import co.jp.core.navigation.Route
 
 object AuthenticationDirections {
     // no argument
-    val root = object : NavigationCommand {
+    val root = object : Route {
         override val arguments = emptyList<NamedNavArgument>()
-        override val destination = "authentication"
+        override val route = "authentication"
     }
 
     // no argument
-    val login = object : NavigationCommand {
+    val login = object : Route {
         override val arguments = emptyList<NamedNavArgument>()
-        override val destination = "login"
+        override val route = "login"
     }
 
     // no argument
-    val registration = object : NavigationCommand {
+    val registration = object : Route {
         override val arguments = emptyList<NamedNavArgument>()
-        override val destination = "registration"
+        override val route = "registration"
     }
 
     // no argument
-    val forgotPassword = object : NavigationCommand {
+    val forgotPassword = object : Route {
         override val arguments = emptyList<NamedNavArgument>()
-        override val destination = "forgot_password"
+        override val route = "forgot_password"
     }
 }

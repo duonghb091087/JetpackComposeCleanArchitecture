@@ -2,9 +2,9 @@ package co.jp.core.navigation
 
 import androidx.navigation.NamedNavArgument
 
-interface NavigationCommand {
+interface Route {
 
     val arguments: List<NamedNavArgument>
 
-    val destination: String
+    val route: String
 }

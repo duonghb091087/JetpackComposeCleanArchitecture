@@ -16,6 +16,8 @@ import co.jp.authentication.AuthenticationNavigator
 import co.jp.authentication.navigation.AuthenticationApiImpl
 import co.jp.authentication.navigation.AuthenticationDirections
 import co.jp.authentication.navigation.authenticationGraph
+import co.jp.core.navigation.AppNavigator
+import co.jp.core.navigation.NavigatorImpl
 import co.jp.core.theme.AppTheme
 import co.jp.main.MainNavigator
 import co.jp.main.navigation.MainApiImpl
@@ -47,6 +49,7 @@ class MainActivity : ComponentActivity() {
 fun AppContent() {
     val navController = rememberNavController()
     CompositionLocalProvider(
+        AppNavigator provides NavigatorImpl(navController),
         MainNavigator provides MainApiImpl(navController),
         AuthenticationNavigator provides AuthenticationApiImpl(navController)
     ) {
@@ -61,7 +64,7 @@ fun AppContent() {
 fun AppGraph(
     navController: NavHostController,
     modifier: Modifier = Modifier,
-    startDestination: String = AuthenticationDirections.root.destination
+    startDestination: String = AuthenticationDirections.root.route
 ) {
     NavHost(
         modifier = modifier,

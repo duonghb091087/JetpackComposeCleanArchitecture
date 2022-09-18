@@ -7,11 +7,11 @@ import co.jp.main.ui.HomeScreen
 
 fun NavGraphBuilder.mainGraph() {
     navigation(
-        startDestination = MainDirections.Home.destination,
-        route = MainDirections.root.destination
+        startDestination = MainDirections.Home.route,
+        route = MainDirections.root.route
     ) {
         composable(
-            route = MainDirections.Home.destination,
+            route = MainDirections.Home.route,
             arguments = MainDirections.Home.arguments
         ) { backStackEntry ->
             val userName = backStackEntry.arguments?.getString(
