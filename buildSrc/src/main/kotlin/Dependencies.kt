@@ -75,6 +75,18 @@ object Dependencies {
         const val leakCanary = "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
     }
 
+    object Okhttp {
+        val okhttpVersion = "4.10.0"
+        val okhttp = "com.squareup.okhttp3:okhttp:$okhttpVersion"
+        val logging = "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+    }
+
+    object Retrofit {
+        const val retrofitVersion = "2.9.0"
+        const val retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+        const val gson = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    }
+
     object SplashScreen {
         const val core = "androidx.core:core-splashscreen:1.0.0-alpha02"
     }

@@ -14,6 +14,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import co.jp.authentication.AuthenticationNavigator
 import co.jp.authentication.navigation.AuthenticationApiImpl
+import co.jp.authentication.navigation.AuthenticationDirections
 import co.jp.authentication.navigation.authenticationGraph
 import co.jp.core.ui.theme.AppTheme
 import co.jp.main.MainNavigator
@@ -39,6 +40,9 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+/**
+ * App navigator, navigator to modules
+ */
 @Composable
 fun AppContent() {
     val navController = rememberNavController()
@@ -46,15 +50,18 @@ fun AppContent() {
         MainNavigator provides MainApiImpl(navController),
         AuthenticationNavigator provides AuthenticationApiImpl(navController)
     ) {
-        AppNavigation(navController)
+        AppGraph(navController)
     }
 }
 
+/**
+ * App navigation graphs
+ */
 @Composable
-fun AppNavigation(
+fun AppGraph(
     navController: NavHostController,
     modifier: Modifier = Modifier,
-    startDestination: String = "authentication"
+    startDestination: String = AuthenticationDirections.root.destination
 ) {
     NavHost(
         modifier = modifier,

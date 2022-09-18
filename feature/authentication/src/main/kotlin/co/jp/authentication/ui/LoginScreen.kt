@@ -10,6 +10,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import co.jp.authentication.AuthenticationNavigator
+import co.jp.authentication.ui.LoginViewModel.Event
 import co.jp.core.ui.theme.AppTheme
 import co.jp.main.MainNavigator
 
@@ -22,7 +23,12 @@ fun LoginScreen(
     Column {
         Button(
             modifier = Modifier.size(124.dp),
-            onClick = { mainNavigator.navigateToHome() }
+            onClick = {
+                viewModel.onEvent(
+                    Event.Login("nokadev@nokasoft.com", "abc123")
+                )
+                // mainNavigator.navigateToHome()
+            }
         ) {
             Text("Home")
         }

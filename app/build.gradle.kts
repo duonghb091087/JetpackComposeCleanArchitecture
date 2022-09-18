@@ -19,11 +19,11 @@ android {
 
     buildTypes {
         getByName("debug") {
-            buildConfigField("String", "BASE_URL", "\"abc\"")
+            buildConfigField("String", "API_ENDPOINT", "\"https://www.facebook.com/\"")
         }
         getByName("release") {
             isMinifyEnabled = false
-            buildConfigField("String", "BASE_URL", "\"def\"")
+            buildConfigField("String", "API_ENDPOINT", "\"https://www.google.com/\"")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -98,4 +98,17 @@ dependencies {
 
     // Timber
     implementation(Dependencies.Timber.timber)
+
+    // Network
+    implementation(Dependencies.Okhttp.okhttp)
+    implementation(Dependencies.Okhttp.logging)
+    implementation(Dependencies.Retrofit.retrofit)
+    implementation(Dependencies.Retrofit.gson)
+
+    // Test
+    testImplementation(Dependencies.Test.junit)
+    androidTestImplementation(Dependencies.Test.extJunit)
+    androidTestImplementation(Dependencies.Test.espresso)
+    androidTestImplementation(Dependencies.Test.Mockk.mockk)
+    androidTestImplementation(Dependencies.Test.Mockk.android)
 }

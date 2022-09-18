@@ -7,16 +7,17 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import co.jp.core.ui.theme.AppTheme
 
 @Composable
-fun RegisterScreen(
-    viewModel: RegisterViewModel = hiltViewModel()
+fun ForgotPasswordScreen(
+    email: String?,
+    viewModel: ForgotPasswordViewModel = hiltViewModel()
 ) {
-    Text(text = "Register")
+    Text(text = "Forgot Password with email : $email")
 }
 
 @Preview(showBackground = true)
 @Composable
-fun RegisterScreenPreview() {
+fun ForgotPasswordPreview() {
     AppTheme {
-        RegisterScreen()
+        ForgotPasswordPreview()
     }
 }

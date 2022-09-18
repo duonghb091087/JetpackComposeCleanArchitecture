@@ -7,6 +7,6 @@ class MainApiImpl(
     private val navController: NavController
 ) : MainApi {
     override fun navigateToHome() {
-        navController.navigate("home")
+        navController.navigate(MainDirections.home.destination)
     }
 }

@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-    // our modules
+    // depends modules
     implementation(project(":core:data"))
 
     // Libs
@@ -51,12 +51,19 @@ dependencies {
     implementation(Dependencies.Compose.viewBinding)
     implementation(Dependencies.Compose.activityCompose)
     implementation(Dependencies.Lifecycle.runtimeKtx)
+    implementation(Dependencies.Lifecycle.viewModelCompose)
     implementation(Dependencies.Compose.navigation)
-
-    // Glide
-    implementation(Dependencies.Landscapist.glide)
 
     // Hilt
     implementation(Dependencies.Hilt.android)
     kapt(Dependencies.Hilt.kapt)
+
+    // Glide
+    implementation(Dependencies.Landscapist.glide)
+
+    // Network
+    implementation(Dependencies.Okhttp.okhttp)
+    implementation(Dependencies.Okhttp.logging)
+    implementation(Dependencies.Retrofit.retrofit)
+    implementation(Dependencies.Retrofit.gson)
 }

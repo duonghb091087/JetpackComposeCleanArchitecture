@@ -57,11 +57,21 @@ dependencies {
     implementation(Dependencies.Lifecycle.viewModelCompose)
     implementation(Dependencies.Compose.navigation)
 
-    // Glide
-    implementation(Dependencies.Landscapist.glide)
-
     // Hilt
     implementation(Dependencies.Hilt.android)
     implementation(Dependencies.Hilt.navigationCompose)
     kapt(Dependencies.Hilt.kapt)
+
+    // Network
+    implementation(Dependencies.Okhttp.okhttp)
+    implementation(Dependencies.Okhttp.logging)
+    implementation(Dependencies.Retrofit.retrofit)
+    implementation(Dependencies.Retrofit.gson)
+
+    // Test
+    testImplementation(Dependencies.Test.junit)
+    androidTestImplementation(Dependencies.Test.extJunit)
+    androidTestImplementation(Dependencies.Test.espresso)
+    androidTestImplementation(Dependencies.Test.Mockk.mockk)
+    androidTestImplementation(Dependencies.Test.Mockk.android)
 }

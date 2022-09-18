@@ -15,7 +15,7 @@ fun HomeScreen() {
     val navigation = AuthenticationNavigator.current
     Button(
         modifier = Modifier.size(124.dp),
-        onClick = { navigation.navigateToLogin() }
+        onClick = { navigation.navigateToForgotPassword("nokadev@nokasoft.com") }
     ) {
         Text("Logout")
     }

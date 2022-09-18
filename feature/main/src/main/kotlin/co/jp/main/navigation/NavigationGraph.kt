@@ -6,7 +6,10 @@ import androidx.navigation.compose.navigation
 import co.jp.main.ui.HomeScreen
 
 fun NavGraphBuilder.mainGraph() {
-    navigation(startDestination = "home", route = "main") {
-        composable("home") { HomeScreen() }
+    navigation(
+        startDestination = MainDirections.home.destination,
+        route = MainDirections.root.destination
+    ) {
+        composable(MainDirections.home.destination) { HomeScreen() }
     }
 }
