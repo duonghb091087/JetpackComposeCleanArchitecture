@@ -18,7 +18,7 @@ Rakuten Android app
 
 ## Architecture
 
-- MVI Clean Architecture
+MVI Clean Architecture
 
 ## Multimodule
 
