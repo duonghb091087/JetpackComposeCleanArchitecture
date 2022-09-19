@@ -43,7 +43,6 @@ class LoginViewModel @Inject constructor(
                 }
                 .catch {
                     showApiError(
-                        true,
                         handleApiError.getMessage(it)
                     )
                 }
@@ -64,7 +63,6 @@ class LoginViewModel @Inject constructor(
                 }
                 .catch {
                     showApiError(
-                        true,
                         handleApiError.getMessage(it)
                     )
                 }
@@ -80,10 +78,9 @@ class LoginViewModel @Inject constructor(
         }
     }
 
-    private fun showApiError(isShow: Boolean, message: String = "") {
+    private fun showApiError(message: String) {
         _uiState.update {
             it.copy(
-                error = isShow,
                 errorMessage = message
             )
         }
@@ -99,7 +96,7 @@ class LoginViewModel @Inject constructor(
             is Event.ChangedPassword -> _uiState.update {
                 it.copy(email = event.password)
             }
-            is Event.DismissDialog -> showApiError(false)
+            is Event.DismissDialog -> showApiError("")
         }
     }
 
@@ -112,12 +109,13 @@ class LoginViewModel @Inject constructor(
     }
 
     data class State(
-        val email: String = "nokadev@nokasoft.com",
-        val password: String = "abc123",
+        val email: String = "",
+        val password: String = "",
         val loading: Boolean = false,
-        val error: Boolean = false,
         val errorMessage: String = ""
-    )
+    ) {
+        val error: Boolean = errorMessage.isNotEmpty()
+    }
 
     sealed class Effect {
         object SuccessLogin : Effect()
