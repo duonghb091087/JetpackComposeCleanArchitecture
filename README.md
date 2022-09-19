@@ -16,6 +16,10 @@ Rakuten Android app
 - Write unit tests for ViewModels.
 - Using Mockk, JUnitTest ...
 
+## Architecture
+
+MVI Clean Architecture
+
 ## Multimodule
 
 ![project dependencies](architecture.png)
